@@ -1,0 +1,276 @@
+/* Fonts --------------------------------------------------------------- */
+@font-face {
+  font-family: Extrude;
+  src: url(../fonts/Extrude.ttf); }
+
+@font-face {
+  font-family: PressStart2P;
+  src: url(../fonts/PressStart2P.ttf); }
+
+@font-face {
+  font-family: alagard;
+  src: url(../fonts/alagard.ttf); }
+
+@font-face {
+  font-family: PerfectDOSVGA437;
+  src: url(../fonts/Perfect-DOS-VGA-437.ttf); }
+
+@font-face {
+  font-family: computerpixel7;
+  src: url(../fonts/computer_pixel-7.ttf); }
+
+/* --------------------------------------------------------------------- */
+body {
+  margin: 0px;
+  background-color: black;
+  color: white;
+  font-family: PressStart2P;
+  font-size: 16px; }
+
+#viewport {
+  position: relative;
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex; }
+
+#loading {
+  -ms-flex-negative: 0;
+  flex-shrink: 0; }
+
+button {
+  font-family: PressStart2P;
+  font-size: 16px;
+  color: white;
+  background-color: transparent;
+  border: 3px solid white;
+  padding: 6px; }
+
+button:hover {
+  outline: 3px solid white;
+  cursor: pointer; }
+
+button:focus {
+  outline: none; }
+
+#font-loader {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  opacity: 0; }
+
+.font1 {
+  font-family: Extrude; }
+
+.font2 {
+  font-family: PressStart2P; }
+
+.font3 {
+  font-family: alagard; }
+
+.font4 {
+  font-family: PerfectDOSVGA437; }
+
+.font5 {
+  font-family: computerpixel7; }
+
+/* Main Menu ----------------------------------------------------------- */
+#main_menu {
+  background-color: black;
+  -ms-flex-negative: 0;
+  flex-shrink: 0; }
+
+#mm_canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px; }
+
+#mm_title {
+  margin: 55px 0px 0px 0px;
+  font-family: Extrude;
+  font-size: 80px; }
+
+#mm_ny {
+  position: absolute;
+  top: 380px;
+  left: 760px; }
+
+#mm_ch {
+  position: absolute;
+  top: 172px;
+  left: 780px; }
+
+#mm_sf {
+  position: absolute;
+  top: 235px;
+  left: 25px; }
+
+.location {
+  text-align: center; }
+
+.location p {
+  margin: 0px 0px 3px 0px; }
+
+.location_img {
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 50%;
+  border-color: transparent;
+  padding: 7px;
+  margin-bottom: 6px; }
+
+.location_img:hover {
+  border-color: white;
+  cursor: pointer; }
+
+/* Franchise styling --------------------------------------------------- */
+.franchise p {
+  margin: 0px; }
+
+.franchise_title {
+  margin: 30px auto 0px auto;
+  font-size: 72px;
+  max-height: 74px; }
+
+.franchise_info {
+  margin-bottom: 25px; }
+
+.back_to_menu {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 6px; }
+
+.back_to_menu:hover {
+  outline: 3px solid white;
+  cursor: pointer; }
+
+/* Custom jQueryUI accordion for franchises ---------------------------- */
+.ui-accordion .ui-accordion-header {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 24px; }
+
+.ui-accordion .ui-accordion-header:focus {
+  outline: none; }
+
+.accordion_heading:hover {
+  background-color: rgba(255, 255, 255, 0.25); }
+
+.ui-accordion .ui-accordion-content {
+  padding-top: 3px;
+  padding-left: 100px; }
+
+/* Styling for francise pages ------------------------------------------ */
+#new_york {
+  background-color: #ec5c18;
+  -ms-flex-negative: 0;
+  flex-shrink: 0; }
+
+.new_york_title {
+  font-family: computerpixel7;
+  font-size: 80px;
+  margin-bottom: 4px; }
+
+/* --------------------------------------------------------------------- */
+#chicago {
+  background-color: blue;
+  -ms-flex-negative: 0;
+  flex-shrink: 0; }
+
+.chicago_title {
+  font-family: PerfectDOSVGA437; }
+
+/* --------------------------------------------------------------------- */
+#san_francisco {
+  background-color: green;
+  -ms-flex-negative: 0;
+  flex-shrink: 0; }
+
+.san_fran_title {
+  font-family: alagard; }
+
+/* Status Page---------------------------------------------------------- */
+#status {
+  background-color: purple;
+  -ms-flex-negative: 0;
+  flex-shrink: 0; }
+
+#status p {
+  margin: 0px 0px 12px 0px; }
+
+#progress_box {
+  width: 600px;
+  height: 25px;
+  outline: 3px solid white;
+  margin-bottom: 10px; }
+
+.segment {
+  width: 200px;
+  height: 25px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  float: left; }
+
+#pizzacat img {
+  height: 300px;
+  width: 300px;
+  margin-top: 17px;
+  margin-bottom: 29px;
+  outline: 3px solid white; }
+
+/* Custom jQuery order confirmation dialog------------------------------ */
+.ui-dialog {
+  background-color: black;
+  border: 3px solid white; }
+
+.ui-dialog-titlebar {
+  border-bottom: 3px solid white; }
+
+.ui-dialog-titlebar-close {
+  display: none; }
+
+/* --------------------------------------------------------------------- */
+.scene {
+  width: 1000px;
+  height: 600px;
+  border: 6px solid;
+  border-color: white;
+  display: none;
+  position: relative; }
+
+/* Utility classes ----------------------------------------------------- */
+.column_center_all {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.column_horz_center {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.row_center_vert {
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.right_align {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
+.hidden {
+  display: none; }

@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<html>
+	<head>
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+		<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+		<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+		<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+		<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+		<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+		<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+		<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<link rel="stylesheet" href="css/pizza.css">
+
+		<script src="js/third_party/jquery-2.1.4.js"></script>
+		<script src="js/third_party/jquery-ui.js"></script>
+
+		<script src="js/scene.js"></script>
+		<script src="js/utilities.js"></script>
+		<script src="js/assets.js"></script>
+		<script src="js/pizza.js"></script>
+
+		<title>Pizza</title>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-54385001-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+	</head>
+	<body>
+		<div id="viewport" class="column_center_all">
+			<div>
+				<div id="font-loader">
+					<span class="font1">1</span>
+					<span class="font2">2</span>
+					<span class="font3">3</span>
+					<span class="font4">4</span>
+					<span class="font5">5</span>
+				</div>
+			</div>
+			<div id="loading" class="scene column_center_all hidden">
+				<p>Loading...</p>
+			</div>
+			<div id="main_menu" class="scene column_horz_center hidden">
+				<canvas id="mm_canvas" width="1000" height="600"></canvas>
+				<p id="mm_title">Cosmic Pizza, Inc</p>
+				<div id="mm_ny" class="location">
+					<div class="column_center_all">
+						<div id="mm_ny_img" class="location_img"></div>
+					</div>
+					<p>Galaxy Pizza</p>
+					<p>New York</p>
+				</div>
+				<div id="mm_ch" class="location">
+					<div class="column_center_all">
+						<div id="mm_ch_img" class="location_img"></div>
+					</div>
+					<p>Pizza Nebula</p>
+					<p>Chicago</p>
+				</div>
+				<div id="mm_sf" class="location">
+					<div class="column_center_all">
+						<div id="mm_sf_img" class="location_img"></div>
+					</div>
+					<p>Astral Pizza</p>
+					<p>San Francisco</p>
+				</div>
+			</div>
+			<div id="new_york" class="scene hidden franchise">
+				<div class="franchise_title new_york_title column_horz_center">
+					<p>Galaxy Pizza</p>
+				</div>
+				<div class="franchise_info column_horz_center">
+					<p>159 W 33rd St, New York</p>
+					<p>(212) 564-1909</p>
+				</div>
+				<div id="new_york_accordion">
+					<div class="accordion_heading row_center_vert cheese">&nbsp;The Sunspot</div>
+					<div>
+						<p>Our famous spicy cheese pizza.</p>
+						<ul>
+							<li>Italian three-cheese blend</li>
+							<li>Sriracha</li>
+							<li>Fresh cracked black pepper</li>
+						</ul>
+						<div class="column_horz_center">
+							<button class="order_button" id="ny_cheese">Order this pizza</button>
+						</div>
+					</div>
+
+					<p class="accordion_heading row_center_vert meat">&nbsp;Meat Supernova</p>
+					<div>
+						<p>From the heart of a dying star, a spicy meat pizza emerges.</p>
+						<ul>
+							<li>Pepperoni</li>
+							<li>Crispy pork belly</li>
+							<li>Spicy kimchi</li>
+						</ul>
+						<div class="column_horz_center">
+							<button class="order_button" id="ny_meat">Order this pizza</button>
+						</div>
+					</div>
+
+					<p class="accordion_heading row_center_vert veggie">&nbsp;Kale Quasar</p>
+					<div>
+						<p>Our pizza scientists have determined that, unlike a real quasar, there is NOT a supermassive black hole at the heart of this veggie pizza. Just delicious greens!</p>
+						<ul>
+							<li>Kale</li>
+							<li>Shiitake mushrooms</li>
+							<li>Broccoflower</li>
+						</ul>
+						<div class="column_horz_center">
+							<button class="order_button" id="ny_veggie">Order this pizza</button>
+						</div>
+					</div>
+				</div>
+				<div class="back_to_menu" id="ny_back"> &lt;- Back </div>
+			</div>
+			<div id="san_francisco" class="scene hidden franchise">
+				<div class="franchise_title san_fran_title column_horz_center">
+					<p>Astral Pizza</p>
+				</div>
+				<div class="franchise_info column_horz_center">
+					<p>846 Divisadero St, San Francisco</p>
+					<p>(415) 441-1118</p>
+				</div>
+				<div id="san_fran_accordion">
+					<div class="accordion_heading row_center_vert cheese">&nbsp;Lunar Cheese</div>
+					<div>
+						<p>Our famous blue cheese pizza. You'll eat it more than once in a blue moon!</p>
+						<ul>
+							<li>Gorgonzola</li>
+							<li>Blue Stilton</li>
+							<li>Roquefort</li>
+						</ul>
+						<div class="column_horz_center">
+							<button class="order_button" id="sf_cheese">Order this pizza</button>
+						</div>
+					</div>
+
+					<p class="accordion_heading row_center_vert meat">&nbsp;The MEATeorite</p>
+					<div>
+						<p>This pizza is still smoking from its entrance into our atmosphere!</p>
+						<ul>
+							<li>Pepperoni</li>
+							<li>Appplewood smoked brisket</li>
+							<li>Mesquite smoked bacon</li>
+						</ul>
+						<div class="column_horz_center">
+							<button class="order_button" id="sf_meat">Order this pizza</button>
+						</div>
+					</div>
+
+					<p class="accordion_heading row_center_vert veggie">&nbsp;Venusian Veggie</p>
+					<div>
+						<p>A delicious and exotic vegetarian pizza.</p>
+						<ul>
+							<li>Artichoke hearts</li>
+							<li>Fiddlehead fern fronds</li>
+							<li>Enoki mushrooms</li>
+							<li>Fresh pineapple sage</li>
+						</ul>
+						<div class="column_horz_center">
+							<button class="order_button" id="sf_veggie">Order this pizza</button>
+						</div>
+					</div>
+				</div>
+				<div class="back_to_menu" id="sf_back"> &lt;- Back </div>
+			</div>
+			<div id="chicago" class="scene hidden franchise">
+				<div class="franchise_title chicago_title column_horz_center">
+					<p>Pizza Nebula</p>
+				</div>
+				<div class="franchise_info column_horz_center">
+					<p>3477 N Broadway St, Chicago</p>
+					<p>(773) 360-1862</p>
+				</div>
+				<div id="chicago_accordion">
+					<div class="accordion_heading row_center_vert cheese">&nbsp;Cheese Nebula</div>
+					<div>
+						<p>Cheese pizza, smothered with fluffy, nebulous cheese.</p>
+						<ul>
+							<li>Buffalo mozzarella</li>
+							<li>Mascarpone</li>
+							<li>Cream cheese</li>
+						</ul>
+						<div class="column_horz_center">
+							<button class="order_button" id="ch_cheese">Order this pizza</button>
+						</div>
+					</div>
+
+					<p class="accordion_heading row_center_vert meat">&nbsp;The Big Bang</p>
+					<div>
+						<p>An explosion of meat.</p>
+						<ul>
+							<li>Pepperoni</li>
+							<li>Crispy prosciutto</li>
+							<li>Salami</li>
+							<li>Bacon</li>
+						</ul>
+						<div class="column_horz_center">
+							<button class="order_button" id="ch_meat">Order this pizza</button>
+						</div>
+					</div>
+
+					<p class="accordion_heading row_center_vert veggie">&nbsp;Absolute Zero</p>
+					<div>
+						<p>You'll have abosolutely zero guilt after eating this healthy vegetarian pizza.</p>
+						<ul>
+							<li>Arugala</li>
+							<li>Portobello mushrooms</li>
+							<li>Fresh basil</li>
+						</ul>
+						<div class="column_horz_center">
+							<button class="order_button" id="ch_veggie">Order this pizza</button>
+						</div>
+					</div>
+				</div>
+				<div class="back_to_menu" id="ch_back"> &lt;- Back </div>
+			</div>
+			<div id="status" class="scene hidden column_horz_center">
+				<div id="status_restaurant" class="franchise_title column_horz_center"></div>
+				<div id="status_pizza" class="column_horz_center">
+					<p>Order status:&nbsp;<span></span></p>
+				</div>
+				<div>
+					<p id="status_address" class="column_horz_center">Detecting address...</p>
+				</div>
+				<div id="pizzacat"></div>
+				<div id="progress_box">
+					<div id="countdown1" class="segment"></div>
+					<div id="countdown2" class="segment"></div>
+					<div id="countdown3" class="segment"></div>
+				</div>
+				<div>
+					<p id="status_current"></p>
+				</div>
+				<div class="back_to_menu hidden" id="status_back"> &lt;- Start Over </div>
+			</div>
+			<div id="order_dialog" title="Order Pizza?" class="hidden">
+				<p>Do you want to order&nbsp;<span></span>?</p>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(function(){
+				Pizza.start();
+			});
+		</script>
+	</body>
+</html>
