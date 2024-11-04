@@ -1,4 +1,4 @@
-//handy utility functions
+// handy utility functions
 
 var U = {
 	randInt : function(min,max) {
@@ -6,4 +6,4 @@ var U = {
 	},
 };
 
-var i; //used in loops
+var i; // used in loops
